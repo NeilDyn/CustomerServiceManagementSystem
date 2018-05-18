@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/Functions" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/Functions" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema xmlns:tns="&lt;urn:microsoft-dynamics-nav/xmlports/searchresults&gt;" elementFormDefault="qualified" targetNamespace="&lt;urn:microsoft-dynamics-nav/xmlports/searchresults&gt;" xmlns="http://www.w3.org/2001/XMLSchema">
+      <complexType name="SalesLine">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="Type" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="ItemNo" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="Qty" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="UnitPrice" type="string" />
+        </sequence>
+      </complexType>
+      <complexType name="SalesHeader">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="DocType" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="No" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="ExtDocNo" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="DocDate" type="string" />
+          <element minOccurs="0" maxOccurs="unbounded" name="SalesLine" type="tns:SalesLine" />
+        </sequence>
+      </complexType>
+      <complexType name="SalesShipmentLine">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="Type" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="ItemNo" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="Qty" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="UnitPrice" type="string" />
+          <element minOccurs="1" maxOccurs="unbounded" name="PostedPackage" type="string" />
+          <element minOccurs="1" maxOccurs="unbounded" name="PostedPackageLine" type="string" />
+        </sequence>
+      </complexType>
+      <complexType name="SalesShipmentHeader">
+        <sequence>
+          <element minOccurs="1" maxOccurs="1" name="No" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="ExtDocNo" type="string" />
+          <element minOccurs="1" maxOccurs="1" name="ShippingDate" type="string" />
+          <element minOccurs="0" maxOccurs="unbounded" name="SalesShipmentLine" type="tns:SalesShipmentLine" />
+        </sequence>
+      </complexType>
+      <complexType name="SearchResults" mixed="true">
+        <sequence>
+          <element minOccurs="0" maxOccurs="unbounded" name="SalesHeader" type="tns:SalesHeader" />
+          <element minOccurs="0" maxOccurs="unbounded" name="SalesShipmentHeader" type="tns:SalesShipmentHeader" />
+        </sequence>
+      </complexType>
+      <element name="SearchResults" type="tns:SearchResults" />
+    </schema>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/Functions" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="DetermineNoType">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="sessionID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="searchNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="DetermineNoType_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SearchDetermineNoType">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="sessionID" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="searchNo" type="string" />
+            <element xmlns:q1="&lt;urn:microsoft-dynamics-nav/xmlports/searchresults&gt;" minOccurs="1" maxOccurs="1" name="searchResults" type="q1:SearchResults" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SearchDetermineNoType_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+            <element xmlns:q2="&lt;urn:microsoft-dynamics-nav/xmlports/searchresults&gt;" minOccurs="1" maxOccurs="1" name="searchResults" type="q2:SearchResults" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="DetermineNoType">
+    <part name="parameters" element="tns:DetermineNoType" />
+  </message>
+  <message name="DetermineNoType_Result">
+    <part name="parameters" element="tns:DetermineNoType_Result" />
+  </message>
+  <message name="SearchDetermineNoType">
+    <part name="parameters" element="tns:SearchDetermineNoType" />
+  </message>
+  <message name="SearchDetermineNoType_Result">
+    <part name="parameters" element="tns:SearchDetermineNoType_Result" />
+  </message>
+  <portType name="Functions_Port">
+    <operation name="DetermineNoType">
+      <input name="DetermineNoType" message="tns:DetermineNoType" />
+      <output name="DetermineNoType_Result" message="tns:DetermineNoType_Result" />
+    </operation>
+    <operation name="SearchDetermineNoType">
+      <input name="SearchDetermineNoType" message="tns:SearchDetermineNoType" />
+      <output name="SearchDetermineNoType_Result" message="tns:SearchDetermineNoType_Result" />
+    </operation>
+  </portType>
+  <binding name="Functions_Binding" type="tns:Functions_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="DetermineNoType">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Functions:DetermineNoType" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="DetermineNoType">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="DetermineNoType_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SearchDetermineNoType">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/Functions:SearchDetermineNoType" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SearchDetermineNoType">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SearchDetermineNoType_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Functions">
+    <port name="Functions_Port" binding="tns:Functions_Binding">
+      <address location="http://jeg-svr2.jeg.local:7058/DynamicsNAV/WS/JEG_SONS,%20Inc/Codeunit/Functions" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>
