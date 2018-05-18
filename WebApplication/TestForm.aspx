@@ -16,9 +16,11 @@
 
 
     </div>
-        <asp:GridView ID="gdvSalesOrder" runat="server" Height="125px" Width="1287px" OnRowDataBound="gdvSalesOrder_RowDataBound" style="margin-top: 30px">
+        <asp:GridView ID="gdvSalesOrder" runat="server" Height="16px" Width="1287px" style="margin-top: 30px" Caption="Sales Order" CaptionAlign="Left">
+            <RowStyle VerticalAlign="Top" />                          
         </asp:GridView>
-        <asp:GridView ID="gdvSalesLines" runat="server" Width="1284px">
+        <asp:GridView ID="gdvSalesLine" runat="server" BorderStyle="Solid" Caption="Sales Lines" CaptionAlign="Left" Height="16px" Width="1280px">
+            <RowStyle VerticalAlign="Top" />
         </asp:GridView>
     </form>
 </body>
