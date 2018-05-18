@@ -16,7 +16,9 @@
 
 
     </div>
-        <asp:GridView ID="gdvOrder" runat="server" Height="262px" Width="1287px">
+        <asp:GridView ID="gdvSalesOrder" runat="server" Height="125px" Width="1287px" OnRowDataBound="gdvSalesOrder_RowDataBound" style="margin-top: 30px">
+        </asp:GridView>
+        <asp:GridView ID="gdvSalesLines" runat="server" Width="1284px">
         </asp:GridView>
     </form>
 </body>

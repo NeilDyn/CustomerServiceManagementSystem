@@ -25,8 +25,8 @@
           <element minOccurs="1" maxOccurs="1" name="ItemNo" type="string" />
           <element minOccurs="1" maxOccurs="1" name="Qty" type="string" />
           <element minOccurs="1" maxOccurs="1" name="UnitPrice" type="string" />
-          <element minOccurs="1" maxOccurs="unbounded" name="PostedPackage" type="string" />
-          <element minOccurs="1" maxOccurs="unbounded" name="PostedPackageLine" type="string" />
+          <element minOccurs="0" maxOccurs="unbounded" name="PostedPackage" type="string" />
+          <element minOccurs="0" maxOccurs="unbounded" name="PostedPackageLine" type="string" />
         </sequence>
       </complexType>
       <complexType name="SalesShipmentHeader">

@@ -13,6 +13,7 @@ namespace WebApplication
     {
         private WebService webService;
         private SearchResults searchResults;
+        private List<SalesLine> salesOrderLines;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -33,8 +34,8 @@ namespace WebApplication
 
                     if (searchResults != null)
                     {
-                        gdvOrder.DataSource = searchResults;
-                        gdvOrder.DataBind();
+                        gdvSalesOrder.DataSource = searchResults.SalesHeader;
+                        gdvSalesOrder.DataBind();
                     }
                     else
                     {
@@ -45,6 +46,32 @@ namespace WebApplication
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + ex.Message + "');", true);
                 }                        
+            }
+        }
+
+        protected void gdvSalesOrder_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                GridView salesLine = e.Row.FindControl("gdvSalesLines") as GridView;
+                salesOrderLines = new List<SalesLine>();
+
+                if (e.Row.RowIndex == 0)
+                {
+                    salesLine.ShowHeader = true;
+                }
+                else
+                {
+                    salesLine.ShowHeader = false;
+                }
+
+                foreach (SalesLine line in searchResults.SalesHeader[e.Row.RowIndex].SalesLine)
+	            {
+                    salesOrderLines.Add(line);
+	            }
+
+                salesLine.DataSource = salesOrderLines;
+                salesLine.DataBind();
             }
         }
     }
