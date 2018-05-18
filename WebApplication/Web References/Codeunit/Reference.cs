@@ -23,15 +23,15 @@ namespace WebApplication.Codeunit {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="Functions_Binding", Namespace="urn:microsoft-dynamics-schemas/codeunit/Functions")]
     public partial class Functions : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
-        private System.Threading.SendOrPostCallback DetermineNoTypeOperationCompleted;
-        
         private System.Threading.SendOrPostCallback SearchDetermineNoTypeOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DetermineNoTypeOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -72,42 +72,10 @@ namespace WebApplication.Codeunit {
         }
         
         /// <remarks/>
-        public event DetermineNoTypeCompletedEventHandler DetermineNoTypeCompleted;
-        
-        /// <remarks/>
         public event SearchDetermineNoTypeCompletedEventHandler SearchDetermineNoTypeCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/Functions:DetermineNoType", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/Functions", ResponseElementName="DetermineNoType_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/Functions", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string DetermineNoType(string sessionID, string searchNo) {
-            object[] results = this.Invoke("DetermineNoType", new object[] {
-                        sessionID,
-                        searchNo});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void DetermineNoTypeAsync(string sessionID, string searchNo) {
-            this.DetermineNoTypeAsync(sessionID, searchNo, null);
-        }
-        
-        /// <remarks/>
-        public void DetermineNoTypeAsync(string sessionID, string searchNo, object userState) {
-            if ((this.DetermineNoTypeOperationCompleted == null)) {
-                this.DetermineNoTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDetermineNoTypeOperationCompleted);
-            }
-            this.InvokeAsync("DetermineNoType", new object[] {
-                        sessionID,
-                        searchNo}, this.DetermineNoTypeOperationCompleted, userState);
-        }
-        
-        private void OnDetermineNoTypeOperationCompleted(object arg) {
-            if ((this.DetermineNoTypeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.DetermineNoTypeCompleted(this, new DetermineNoTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
+        public event DetermineNoTypeCompletedEventHandler DetermineNoTypeCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/Functions:SearchDetermineNoType", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/Functions", ResponseElementName="SearchDetermineNoType_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/Functions", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -145,6 +113,38 @@ namespace WebApplication.Codeunit {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/Functions:DetermineNoType", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/Functions", ResponseElementName="DetermineNoType_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/Functions", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
+        public string DetermineNoType(string sessionID, string searchNo) {
+            object[] results = this.Invoke("DetermineNoType", new object[] {
+                        sessionID,
+                        searchNo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void DetermineNoTypeAsync(string sessionID, string searchNo) {
+            this.DetermineNoTypeAsync(sessionID, searchNo, null);
+        }
+        
+        /// <remarks/>
+        public void DetermineNoTypeAsync(string sessionID, string searchNo, object userState) {
+            if ((this.DetermineNoTypeOperationCompleted == null)) {
+                this.DetermineNoTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDetermineNoTypeOperationCompleted);
+            }
+            this.InvokeAsync("DetermineNoType", new object[] {
+                        sessionID,
+                        searchNo}, this.DetermineNoTypeOperationCompleted, userState);
+        }
+        
+        private void OnDetermineNoTypeOperationCompleted(object arg) {
+            if ((this.DetermineNoTypeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DetermineNoTypeCompleted(this, new DetermineNoTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -164,7 +164,7 @@ namespace WebApplication.Codeunit {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -173,7 +173,15 @@ namespace WebApplication.Codeunit {
         
         private SalesHeader[] salesHeaderField;
         
+        private SalesLine[] salesLineField;
+        
         private SalesShipmentHeader[] salesShipmentHeaderField;
+        
+        private SalesShipmentLine[] salesShipmentLineField;
+        
+        private PostedPackage[] postedPackageField;
+        
+        private PostedPackageLine[] postedPackageLineField;
         
         private string[] textField;
         
@@ -189,6 +197,17 @@ namespace WebApplication.Codeunit {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("SalesLine")]
+        public SalesLine[] SalesLine {
+            get {
+                return this.salesLineField;
+            }
+            set {
+                this.salesLineField = value;
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("SalesShipmentHeader")]
         public SalesShipmentHeader[] SalesShipmentHeader {
             get {
@@ -196,6 +215,39 @@ namespace WebApplication.Codeunit {
             }
             set {
                 this.salesShipmentHeaderField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("SalesShipmentLine")]
+        public SalesShipmentLine[] SalesShipmentLine {
+            get {
+                return this.salesShipmentLineField;
+            }
+            set {
+                this.salesShipmentLineField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("PostedPackage")]
+        public PostedPackage[] PostedPackage {
+            get {
+                return this.postedPackageField;
+            }
+            set {
+                this.postedPackageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("PostedPackageLine")]
+        public PostedPackageLine[] PostedPackageLine {
+            get {
+                return this.postedPackageLineField;
+            }
+            set {
+                this.postedPackageLineField = value;
             }
         }
         
@@ -212,7 +264,7 @@ namespace WebApplication.Codeunit {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -226,8 +278,6 @@ namespace WebApplication.Codeunit {
         private string extDocNoField;
         
         private string docDateField;
-        
-        private SalesLine[] salesLineField;
         
         /// <remarks/>
         public string DocType {
@@ -268,26 +318,17 @@ namespace WebApplication.Codeunit {
                 this.docDateField = value;
             }
         }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("SalesLine")]
-        public SalesLine[] SalesLine {
-            get {
-                return this.salesLineField;
-            }
-            set {
-                this.salesLineField = value;
-            }
-        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
-    public partial class SalesLine {
+    public partial class PostedPackageLine {
+        
+        private string packNoField;
         
         private string typeField;
         
@@ -295,7 +336,19 @@ namespace WebApplication.Codeunit {
         
         private string qtyField;
         
-        private string unitPriceField;
+        private string priceField;
+        
+        private string serialNoField;
+        
+        /// <remarks/>
+        public string PackNo {
+            get {
+                return this.packNoField;
+            }
+            set {
+                this.packNoField = value;
+            }
+        }
         
         /// <remarks/>
         public string Type {
@@ -328,24 +381,129 @@ namespace WebApplication.Codeunit {
         }
         
         /// <remarks/>
-        public string UnitPrice {
+        public string Price {
             get {
-                return this.unitPriceField;
+                return this.priceField;
             }
             set {
-                this.unitPriceField = value;
+                this.priceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SerialNo {
+            get {
+                return this.serialNoField;
+            }
+            set {
+                this.serialNoField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
+    public partial class PostedPackage {
+        
+        private string packNoField;
+        
+        private string shippingAgentField;
+        
+        private string shippingServiceField;
+        
+        private string extTrackNoField;
+        
+        private string postingDateField;
+        
+        private string postedSourceIDField;
+        
+        private string sourceIDField;
+        
+        /// <remarks/>
+        public string PackNo {
+            get {
+                return this.packNoField;
+            }
+            set {
+                this.packNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShippingAgent {
+            get {
+                return this.shippingAgentField;
+            }
+            set {
+                this.shippingAgentField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShippingService {
+            get {
+                return this.shippingServiceField;
+            }
+            set {
+                this.shippingServiceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ExtTrackNo {
+            get {
+                return this.extTrackNoField;
+            }
+            set {
+                this.extTrackNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PostingDate {
+            get {
+                return this.postingDateField;
+            }
+            set {
+                this.postingDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PostedSourceID {
+            get {
+                return this.postedSourceIDField;
+            }
+            set {
+                this.postedSourceIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SourceID {
+            get {
+                return this.sourceIDField;
+            }
+            set {
+                this.sourceIDField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
     public partial class SalesShipmentLine {
         
+        private string docNoField;
+        
         private string typeField;
         
         private string itemNoField;
@@ -354,9 +512,15 @@ namespace WebApplication.Codeunit {
         
         private string unitPriceField;
         
-        private string[] postedPackageField;
-        
-        private string[] postedPackageLineField;
+        /// <remarks/>
+        public string DocNo {
+            get {
+                return this.docNoField;
+            }
+            set {
+                this.docNoField = value;
+            }
+        }
         
         /// <remarks/>
         public string Type {
@@ -397,32 +561,10 @@ namespace WebApplication.Codeunit {
                 this.unitPriceField = value;
             }
         }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("PostedPackage")]
-        public string[] PostedPackage {
-            get {
-                return this.postedPackageField;
-            }
-            set {
-                this.postedPackageField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("PostedPackageLine")]
-        public string[] PostedPackageLine {
-            get {
-                return this.postedPackageLineField;
-            }
-            set {
-                this.postedPackageLineField = value;
-            }
-        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -434,8 +576,6 @@ namespace WebApplication.Codeunit {
         private string extDocNoField;
         
         private string shippingDateField;
-        
-        private SalesShipmentLine[] salesShipmentLineField;
         
         /// <remarks/>
         public string No {
@@ -466,51 +606,83 @@ namespace WebApplication.Codeunit {
                 this.shippingDateField = value;
             }
         }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("SalesShipmentLine")]
-        public SalesShipmentLine[] SalesShipmentLine {
-            get {
-                return this.salesShipmentLineField;
-            }
-            set {
-                this.salesShipmentLineField = value;
-            }
-        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void DetermineNoTypeCompletedEventHandler(object sender, DetermineNoTypeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
+    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class DetermineNoTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
+    public partial class SalesLine {
         
-        private object[] results;
+        private string docNoField;
         
-        internal DetermineNoTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
+        private string typeField;
+        
+        private string itemNoField;
+        
+        private string qtyField;
+        
+        private string unitPriceField;
+        
+        /// <remarks/>
+        public string DocNo {
+            get {
+                return this.docNoField;
+            }
+            set {
+                this.docNoField = value;
+            }
         }
         
         /// <remarks/>
-        public string Result {
+        public string Type {
             get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ItemNo {
+            get {
+                return this.itemNoField;
+            }
+            set {
+                this.itemNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Qty {
+            get {
+                return this.qtyField;
+            }
+            set {
+                this.qtyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UnitPrice {
+            get {
+                return this.unitPriceField;
+            }
+            set {
+                this.unitPriceField = value;
             }
         }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void SearchDetermineNoTypeCompletedEventHandler(object sender, SearchDetermineNoTypeCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SearchDetermineNoTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -535,6 +707,32 @@ namespace WebApplication.Codeunit {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((SearchResults)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    public delegate void DetermineNoTypeCompletedEventHandler(object sender, DetermineNoTypeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DetermineNoTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DetermineNoTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }
