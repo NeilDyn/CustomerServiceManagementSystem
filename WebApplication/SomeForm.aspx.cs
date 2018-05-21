@@ -11,6 +11,15 @@ namespace WebApplication
 {
     public partial class SomeForm : System.Web.UI.Page
     {
+        enum ObjectList
+        {
+            SalesHeader,
+            SalesLine,
+            ShipmentHdr,
+            ShipmentLine,
+            Package,
+            PackageLine
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -26,11 +35,69 @@ namespace WebApplication
             }
             SearchResults sr = ws.FindOrder(txtSearch.Text);
             List<GridView> gridList = new List<GridView>();
+            int idCount = 0;
+            bool finishload = false;
 
-            GridView gv = new GridView();
-            gv.DataSource = sr.SalesHeader;
-            gv.DataBind();
-            form1.Controls.Add(gv);
+            do
+            {
+                GridView gv = new GridView();
+                gv.ID = "gv" + idCount;
+                ObjectList oj = (ObjectList)idCount;
+                idCount++;
+
+                switch (oj)
+                {
+                    case ObjectList.SalesHeader:
+                        if (sr.SalesHeader != null)
+                        {
+                            gv.DataSource = sr.SalesHeader;
+                        }
+                        break;
+                    case ObjectList.SalesLine:
+                        if (sr.SalesLine != null)
+                        {
+                            gv.DataSource = sr.SalesLine;
+                        }
+                        break;
+                    case ObjectList.ShipmentHdr:
+                        if (sr.SalesShipmentHeader != null)
+                        {
+                            gv.DataSource = sr.SalesShipmentHeader;
+                        }
+                        break;
+                    case ObjectList.ShipmentLine:
+                        if (sr.SalesShipmentLine != null)
+                        {
+                            gv.DataSource = sr.SalesShipmentLine;
+                        }
+                        break;
+                    case ObjectList.Package:
+                        if (sr.PostedPackage != null)
+                        {
+                            gv.DataSource = sr.PostedPackage;
+                        }
+                        break;
+                    case ObjectList.PackageLine:
+                        if (sr.PostedPackageLine != null)
+                        {
+                            gv.DataSource = sr.PostedPackageLine;
+                        }
+                        break;
+                    default:
+                        finishload = true;
+                        break;
+                }
+
+                gv.DataBind();
+                gridList.Add(gv);
+            } while (!finishload);
+
+            foreach (GridView item in gridList)
+            {
+                form1.Controls.Add(item);
+            }
+            //form1.Controls.Add(gv);
+            
 
             
         }
