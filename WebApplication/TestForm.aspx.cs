@@ -43,6 +43,20 @@ namespace WebApplication
 
                         gdvSalesLine.DataSource = searchResults.SalesLine;
                         gdvSalesLine.DataBind();
+
+                        gdvShipmentHeader.DataSource = searchResults.SalesShipmentHeader;
+                        gdvShipmentHeader.DataBind();
+
+                        gdvShipmentLines.DataSource = searchResults.SalesShipmentLine;
+                        gdvShipmentLines.DataBind();
+
+                        gdvPostedPackage.DataSource = searchResults.PostedPackage;
+                        gdvPostedPackage.DataBind();
+
+                        gdvPackageLine.DataSource = searchResults.PostedPackageLine;
+                        gdvPackageLine.DataBind();
+
+                        //searchResults.SalesHeader[0].DocType == "return"
                     }
                     else
                     {
@@ -52,7 +66,7 @@ namespace WebApplication
                 catch (Exception ex)
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + ex.Message + "');", true);
-                }                        
+                }
             }
         }
 
