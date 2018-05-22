@@ -162,6 +162,8 @@ namespace WebApplication.Codeunit {
         
         private SalesCreditMemoLines[] salesCreditMemoLinesField;
         
+        private TestAddress[] testAddressField;
+        
         private string[] textField;
         
         /// <remarks/>
@@ -319,6 +321,17 @@ namespace WebApplication.Codeunit {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("TestAddress")]
+        public TestAddress[] TestAddress {
+            get {
+                return this.testAddressField;
+            }
+            set {
+                this.testAddressField = value;
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlTextAttribute()]
         public string[] Text {
             get {
@@ -383,6 +396,41 @@ namespace WebApplication.Codeunit {
             }
             set {
                 this.docDateField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
+    public partial class TestAddress {
+        
+        private string[] channelField;
+        
+        private string[] textField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Channel")]
+        public string[] Channel {
+            get {
+                return this.channelField;
+            }
+            set {
+                this.channelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public string[] Text {
+            get {
+                return this.textField;
+            }
+            set {
+                this.textField = value;
             }
         }
     }

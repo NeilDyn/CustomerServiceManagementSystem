@@ -15,6 +15,8 @@ namespace WebApplication
         private WebService webService;
         private SearchResults searchResults;
 
+        private string[] channel;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //BoundField bound = new BoundField();
@@ -55,6 +57,12 @@ namespace WebApplication
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "No records found." + "');", true);
                 searchResults = new SearchResults();
             }
+
+            channel = searchResults.TestAddress[0].Channel;
+            //string[] split = channel.Split(",");
+            //txtCustomerName.Text = split[2];
+            //txtCustomerAddress.Text = split[5];
+            
 
             gdvSalesOrder.DataSource = searchResults.SalesHeader;
             gdvSalesLine.DataSource = searchResults.SalesLine;
