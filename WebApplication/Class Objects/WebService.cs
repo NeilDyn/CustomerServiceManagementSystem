@@ -19,8 +19,8 @@ namespace WebApplication.Class_Objects
         protected string password = "JEGnewedi2018!";
         protected string domain = "JEG";
 
-        private string alertScript;
         protected Functions functions = new Functions();
+
 
         public WebService()
         {
@@ -30,7 +30,8 @@ namespace WebApplication.Class_Objects
             }
             catch (Exception e)
             {
-                //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + e.Message + "');", true);
+                var page = HttpContext.Current.CurrentHandler as Page;
+                page.ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + e.Message + "');", true);
             }
         }
 
@@ -49,7 +50,7 @@ namespace WebApplication.Class_Objects
         public SearchResults FindOrder(string searchNo)
         {
             SearchResults results = new SearchResults();
-
+   
             functions.SearchDetermineNoType(SessionID(), searchNo, ref results);
             return results;
         }
@@ -58,8 +59,5 @@ namespace WebApplication.Class_Objects
         {
             return "testSesh";
         }
-
-       
-        
     }
 }

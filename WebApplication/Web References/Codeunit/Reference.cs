@@ -31,8 +31,6 @@ namespace WebApplication.Codeunit {
         
         private System.Threading.SendOrPostCallback SearchDetermineNoTypeOperationCompleted;
         
-        private System.Threading.SendOrPostCallback DetermineNoTypeOperationCompleted;
-        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -75,9 +73,6 @@ namespace WebApplication.Codeunit {
         public event SearchDetermineNoTypeCompletedEventHandler SearchDetermineNoTypeCompleted;
         
         /// <remarks/>
-        public event DetermineNoTypeCompletedEventHandler DetermineNoTypeCompleted;
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/Functions:SearchDetermineNoType", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/Functions", ResponseElementName="SearchDetermineNoType_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/Functions", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
         public string SearchDetermineNoType(string sessionID, string searchNo, ref SearchResults searchResults) {
@@ -109,38 +104,6 @@ namespace WebApplication.Codeunit {
             if ((this.SearchDetermineNoTypeCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.SearchDetermineNoTypeCompleted(this, new SearchDetermineNoTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:microsoft-dynamics-schemas/codeunit/Functions:DetermineNoType", RequestNamespace="urn:microsoft-dynamics-schemas/codeunit/Functions", ResponseElementName="DetermineNoType_Result", ResponseNamespace="urn:microsoft-dynamics-schemas/codeunit/Functions", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("return_value")]
-        public string DetermineNoType(string sessionID, string searchNo) {
-            object[] results = this.Invoke("DetermineNoType", new object[] {
-                        sessionID,
-                        searchNo});
-            return ((string)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void DetermineNoTypeAsync(string sessionID, string searchNo) {
-            this.DetermineNoTypeAsync(sessionID, searchNo, null);
-        }
-        
-        /// <remarks/>
-        public void DetermineNoTypeAsync(string sessionID, string searchNo, object userState) {
-            if ((this.DetermineNoTypeOperationCompleted == null)) {
-                this.DetermineNoTypeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDetermineNoTypeOperationCompleted);
-            }
-            this.InvokeAsync("DetermineNoType", new object[] {
-                        sessionID,
-                        searchNo}, this.DetermineNoTypeOperationCompleted, userState);
-        }
-        
-        private void OnDetermineNoTypeOperationCompleted(object arg) {
-            if ((this.DetermineNoTypeCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.DetermineNoTypeCompleted(this, new DetermineNoTypeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -182,6 +145,22 @@ namespace WebApplication.Codeunit {
         private PostedPackage[] postedPackageField;
         
         private PostedPackageLine[] postedPackageLineField;
+        
+        private SalesInvoiceHeader[] salesInvoiceHeaderField;
+        
+        private SalesInvoiceLine[] salesInvoiceLineField;
+        
+        private ReturnReceiptHeader[] returnReceiptHeaderField;
+        
+        private ReturnReceiptLine[] returnReceiptLineField;
+        
+        private PostedReceive[] postedReceiveField;
+        
+        private PostedReceiveLine[] postedReceiveLineField;
+        
+        private SalesCreditMemo[] salesCreditMemoField;
+        
+        private SalesCreditMemoLines[] salesCreditMemoLinesField;
         
         private string[] textField;
         
@@ -252,6 +231,94 @@ namespace WebApplication.Codeunit {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("SalesInvoiceHeader")]
+        public SalesInvoiceHeader[] SalesInvoiceHeader {
+            get {
+                return this.salesInvoiceHeaderField;
+            }
+            set {
+                this.salesInvoiceHeaderField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("SalesInvoiceLine")]
+        public SalesInvoiceLine[] SalesInvoiceLine {
+            get {
+                return this.salesInvoiceLineField;
+            }
+            set {
+                this.salesInvoiceLineField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ReturnReceiptHeader")]
+        public ReturnReceiptHeader[] ReturnReceiptHeader {
+            get {
+                return this.returnReceiptHeaderField;
+            }
+            set {
+                this.returnReceiptHeaderField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ReturnReceiptLine")]
+        public ReturnReceiptLine[] ReturnReceiptLine {
+            get {
+                return this.returnReceiptLineField;
+            }
+            set {
+                this.returnReceiptLineField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("PostedReceive")]
+        public PostedReceive[] PostedReceive {
+            get {
+                return this.postedReceiveField;
+            }
+            set {
+                this.postedReceiveField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("PostedReceiveLine")]
+        public PostedReceiveLine[] PostedReceiveLine {
+            get {
+                return this.postedReceiveLineField;
+            }
+            set {
+                this.postedReceiveLineField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("SalesCreditMemo")]
+        public SalesCreditMemo[] SalesCreditMemo {
+            get {
+                return this.salesCreditMemoField;
+            }
+            set {
+                this.salesCreditMemoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("SalesCreditMemoLines")]
+        public SalesCreditMemoLines[] SalesCreditMemoLines {
+            get {
+                return this.salesCreditMemoLinesField;
+            }
+            set {
+                this.salesCreditMemoLinesField = value;
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlTextAttribute()]
         public string[] Text {
             get {
@@ -316,6 +383,522 @@ namespace WebApplication.Codeunit {
             }
             set {
                 this.docDateField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
+    public partial class SalesCreditMemoLines {
+        
+        private string docNoField;
+        
+        private string typeField;
+        
+        private string itemNoField;
+        
+        private string qtyField;
+        
+        private string unitPriceField;
+        
+        /// <remarks/>
+        public string DocNo {
+            get {
+                return this.docNoField;
+            }
+            set {
+                this.docNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ItemNo {
+            get {
+                return this.itemNoField;
+            }
+            set {
+                this.itemNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Qty {
+            get {
+                return this.qtyField;
+            }
+            set {
+                this.qtyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UnitPrice {
+            get {
+                return this.unitPriceField;
+            }
+            set {
+                this.unitPriceField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
+    public partial class SalesCreditMemo {
+        
+        private string noField;
+        
+        private string extDocNoField;
+        
+        private string postingDateField;
+        
+        /// <remarks/>
+        public string No {
+            get {
+                return this.noField;
+            }
+            set {
+                this.noField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ExtDocNo {
+            get {
+                return this.extDocNoField;
+            }
+            set {
+                this.extDocNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PostingDate {
+            get {
+                return this.postingDateField;
+            }
+            set {
+                this.postingDateField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
+    public partial class PostedReceiveLine {
+        
+        private string recNoField;
+        
+        private string typeField;
+        
+        private string itemNoField;
+        
+        private string qtyField;
+        
+        private string serialNoField;
+        
+        /// <remarks/>
+        public string RecNo {
+            get {
+                return this.recNoField;
+            }
+            set {
+                this.recNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ItemNo {
+            get {
+                return this.itemNoField;
+            }
+            set {
+                this.itemNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Qty {
+            get {
+                return this.qtyField;
+            }
+            set {
+                this.qtyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SerialNo {
+            get {
+                return this.serialNoField;
+            }
+            set {
+                this.serialNoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
+    public partial class PostedReceive {
+        
+        private string noField;
+        
+        private string extDocNoField;
+        
+        private string extTrackNoField;
+        
+        private string shippingAgentField;
+        
+        private string shippingServiceField;
+        
+        private string receiveDateField;
+        
+        private string postedSourceIDField;
+        
+        private string sourceIDField;
+        
+        /// <remarks/>
+        public string No {
+            get {
+                return this.noField;
+            }
+            set {
+                this.noField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ExtDocNo {
+            get {
+                return this.extDocNoField;
+            }
+            set {
+                this.extDocNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ExtTrackNo {
+            get {
+                return this.extTrackNoField;
+            }
+            set {
+                this.extTrackNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShippingAgent {
+            get {
+                return this.shippingAgentField;
+            }
+            set {
+                this.shippingAgentField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShippingService {
+            get {
+                return this.shippingServiceField;
+            }
+            set {
+                this.shippingServiceField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ReceiveDate {
+            get {
+                return this.receiveDateField;
+            }
+            set {
+                this.receiveDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PostedSourceID {
+            get {
+                return this.postedSourceIDField;
+            }
+            set {
+                this.postedSourceIDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SourceID {
+            get {
+                return this.sourceIDField;
+            }
+            set {
+                this.sourceIDField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
+    public partial class ReturnReceiptLine {
+        
+        private string docNoField;
+        
+        private string typeField;
+        
+        private string itemNoField;
+        
+        private string qtyField;
+        
+        private string unitPriceField;
+        
+        /// <remarks/>
+        public string DocNo {
+            get {
+                return this.docNoField;
+            }
+            set {
+                this.docNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ItemNo {
+            get {
+                return this.itemNoField;
+            }
+            set {
+                this.itemNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Qty {
+            get {
+                return this.qtyField;
+            }
+            set {
+                this.qtyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UnitPrice {
+            get {
+                return this.unitPriceField;
+            }
+            set {
+                this.unitPriceField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
+    public partial class ReturnReceiptHeader {
+        
+        private string noField;
+        
+        private string extDocNoField;
+        
+        private string receiveDateField;
+        
+        /// <remarks/>
+        public string No {
+            get {
+                return this.noField;
+            }
+            set {
+                this.noField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ExtDocNo {
+            get {
+                return this.extDocNoField;
+            }
+            set {
+                this.extDocNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ReceiveDate {
+            get {
+                return this.receiveDateField;
+            }
+            set {
+                this.receiveDateField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
+    public partial class SalesInvoiceLine {
+        
+        private string docNoField;
+        
+        private string typeField;
+        
+        private string itemNoField;
+        
+        private string qtyField;
+        
+        private string unitPriceField;
+        
+        /// <remarks/>
+        public string DocNo {
+            get {
+                return this.docNoField;
+            }
+            set {
+                this.docNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Type {
+            get {
+                return this.typeField;
+            }
+            set {
+                this.typeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ItemNo {
+            get {
+                return this.itemNoField;
+            }
+            set {
+                this.itemNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Qty {
+            get {
+                return this.qtyField;
+            }
+            set {
+                this.qtyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UnitPrice {
+            get {
+                return this.unitPriceField;
+            }
+            set {
+                this.unitPriceField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
+    public partial class SalesInvoiceHeader {
+        
+        private string noField;
+        
+        private string extDocNoField;
+        
+        private string postingDateField;
+        
+        /// <remarks/>
+        public string No {
+            get {
+                return this.noField;
+            }
+            set {
+                this.noField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ExtDocNo {
+            get {
+                return this.extDocNoField;
+            }
+            set {
+                this.extDocNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PostingDate {
+            get {
+                return this.postingDateField;
+            }
+            set {
+                this.postingDateField = value;
             }
         }
     }
@@ -411,11 +994,11 @@ namespace WebApplication.Codeunit {
         
         private string packNoField;
         
+        private string extTrackNoField;
+        
         private string shippingAgentField;
         
         private string shippingServiceField;
-        
-        private string extTrackNoField;
         
         private string postingDateField;
         
@@ -430,6 +1013,16 @@ namespace WebApplication.Codeunit {
             }
             set {
                 this.packNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ExtTrackNo {
+            get {
+                return this.extTrackNoField;
+            }
+            set {
+                this.extTrackNoField = value;
             }
         }
         
@@ -450,16 +1043,6 @@ namespace WebApplication.Codeunit {
             }
             set {
                 this.shippingServiceField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ExtTrackNo {
-            get {
-                return this.extTrackNoField;
-            }
-            set {
-                this.extTrackNoField = value;
             }
         }
         
@@ -707,32 +1290,6 @@ namespace WebApplication.Codeunit {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((SearchResults)(this.results[1]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void DetermineNoTypeCompletedEventHandler(object sender, DetermineNoTypeCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class DetermineNoTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal DetermineNoTypeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public string Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
             }
         }
     }

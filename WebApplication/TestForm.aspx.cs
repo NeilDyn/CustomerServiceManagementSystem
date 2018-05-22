@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebApplication.Codeunit;
 using WebApplication.Class_Objects;
+using System.Data;
 
 namespace WebApplication
 {
@@ -13,7 +14,7 @@ namespace WebApplication
     {
         private WebService webService;
         private SearchResults searchResults;
-        private List<SalesLine> salesOrderLines;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //BoundField bound = new BoundField();
@@ -26,6 +27,7 @@ namespace WebApplication
         protected void Button1_Click(object sender, EventArgs e)
         {
             string searchValue = txtSearchNo.Text;
+  
 
             if (searchValue != null && !string.IsNullOrWhiteSpace(searchValue))
             {
@@ -36,31 +38,11 @@ namespace WebApplication
                     searchResults = new SearchResults();
                     searchResults = webService.FindOrder(searchValue);
 
-                    if (searchResults != null)
-                    {
-                        gdvSalesOrder.DataSource = searchResults.SalesHeader;
-                        gdvSalesOrder.DataBind();
-
-                        gdvSalesLine.DataSource = searchResults.SalesLine;
-                        gdvSalesLine.DataBind();
-
-                        gdvShipmentHeader.DataSource = searchResults.SalesShipmentHeader;
-                        gdvShipmentHeader.DataBind();
-
-                        gdvShipmentLines.DataSource = searchResults.SalesShipmentLine;
-                        gdvShipmentLines.DataBind();
-
-                        gdvPostedPackage.DataSource = searchResults.PostedPackage;
-                        gdvPostedPackage.DataBind();
-
-                        gdvPackageLine.DataSource = searchResults.PostedPackageLine;
-                        gdvPackageLine.DataBind();
-
-                        //searchResults.SalesHeader[0].DocType == "return"
-                    }
-                    else
+                    if (searchResults == null)
                     {
                         ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "XML port returned null value" + "');", true);
+
+                        searchResults = new SearchResults();
                     }
                 }
                 catch (Exception ex)
@@ -68,6 +50,41 @@ namespace WebApplication
                     ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + ex.Message + "');", true);
                 }
             }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "No records found." + "');", true);
+                searchResults = new SearchResults();
+            }
+
+            gdvSalesOrder.DataSource = searchResults.SalesHeader;
+            gdvSalesLine.DataSource = searchResults.SalesLine;
+            gdvShipmentHeader.DataSource = searchResults.SalesShipmentHeader;
+            gdvShipmentLines.DataSource = searchResults.SalesShipmentLine;
+            gdvPostedPackage.DataSource = searchResults.PostedPackage;
+            gdvPackageLine.DataSource = searchResults.PostedPackageLine;
+            gdvReturnReceiptHeader.DataSource = searchResults.ReturnReceiptHeader;
+            gdvReturnReceiptLines.DataSource = searchResults.ReturnReceiptLine;
+            gdvPostedReceive.DataSource = searchResults.PostedReceive;
+            gdvPostedReceiveLines.DataSource = searchResults.PostedReceiveLine;
+            gdvCreditMemoHeader.DataSource = searchResults.SalesCreditMemo;
+            gdvCreditMemoLines.DataSource = searchResults.SalesCreditMemoLines;
+            gdvInvoiceHeader.DataSource = searchResults.SalesInvoiceHeader;
+            gdvInvoiceLines.DataSource = searchResults.SalesInvoiceLine;
+
+            gdvSalesOrder.DataBind();
+            gdvSalesLine.DataBind();
+            gdvShipmentHeader.DataBind();
+            gdvShipmentLines.DataBind();
+            gdvPostedPackage.DataBind();
+            gdvPackageLine.DataBind();
+            gdvReturnReceiptHeader.DataBind();
+            gdvReturnReceiptLines.DataBind();
+            gdvPostedReceive.DataBind();
+            gdvPostedReceiveLines.DataBind();
+            gdvCreditMemoHeader.DataBind();
+            gdvCreditMemoLines.DataBind();
+            gdvInvoiceHeader.DataBind();
+            gdvInvoiceLines.DataBind();
         }
 
     }
