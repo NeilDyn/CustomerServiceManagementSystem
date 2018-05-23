@@ -39,6 +39,7 @@ namespace WebApplication
                 {
                     searchResults = new SearchResults();
                     searchResults = webService.FindOrder(searchValue);
+                    channel = searchResults.TestAddress[0].Channel;
 
                     if (searchResults == null)
                     {
@@ -58,12 +59,16 @@ namespace WebApplication
                 searchResults = new SearchResults();
             }
 
-            channel = searchResults.TestAddress[0].Channel;
-            //string[] split = channel.Split(",");
-            //txtCustomerName.Text = split[2];
-            //txtCustomerAddress.Text = split[5];
             
 
+            string[] split = channel[0].Split(';');
+            txtSellToCustomerNo.Text = split[0];
+            txtSellToCustomerName.Text = split[1];
+            txtOrderDate.Text = split[2];
+            txtShipToName.Text = split[3];
+            txtShipToAddress.Text = split[4];
+            txtShipToCity.Text = split[5];
+            
             gdvSalesOrder.DataSource = searchResults.SalesHeader;
             gdvSalesLine.DataSource = searchResults.SalesLine;
             gdvShipmentHeader.DataSource = searchResults.SalesShipmentHeader;

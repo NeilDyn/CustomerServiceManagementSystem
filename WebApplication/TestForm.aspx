@@ -16,10 +16,20 @@
 
         <br />
         <div>
-            <asp:Label ID="lblCustomerName" runat="server" Text="Customer Name:" />
-            <asp:TextBox ID="txtCustomerName" runat="server" style="margin-left: 16px" Width="140px" Enabled="False" />
-            <asp:Label ID="lblCustomerAddress" runat="server" style="margin-left: 16px" Text="Customer Address:" />
-            <asp:TextBox ID="txtCustomerAddress" runat="server" style="margin-left: 16px" Width="140px" Enabled="False" Rows="2" />
+            <asp:Label ID="lblOrderDate" runat="server" Text="Order Date:" />
+            <asp:TextBox ID="txtOrderDate" runat="server" style="margin-left: 92px" Width="140px" Enabled="False" />
+            <asp:Label ID="lblShipToName" runat="server" style="margin-left: 16px" Text="Ship-to Name:" />
+            <asp:TextBox ID="txtShipToName" runat="server" style="margin-left: 28px" Width="140px" Enabled="False" />
+            <br />
+            <asp:Label ID="lblSellToCustomerNo" runat="server" Text="Sell-to Customer No:" />
+            <asp:TextBox ID="txtSellToCustomerNo" runat="server" style="margin-left: 34px" Width="140px" Enabled="False" />
+            <asp:Label ID="lblCustomerAddress" runat="server" style="margin-left: 16px" Text="Ship-to Address:" />
+            <asp:TextBox ID="txtShipToAddress" runat="server" style="margin-left: 16px" Width="140px" Enabled="False" />
+            <br />
+            <asp:Label ID="lblSellToCustomerNo0" runat="server" Text="Sell-to Customer Name:" />
+            <asp:TextBox ID="txtSellToCustomerName" runat="server" style="margin-left: 16px" Width="140px" Enabled="False" />
+            <asp:Label ID="lblCustomerAddress0" runat="server" style="margin-left: 16px" Text="Ship-to City:" />
+            <asp:TextBox ID="txtShipToCity" runat="server" style="margin-left: 43px" Width="140px" Enabled="False" />
         </div>
 
         <div>
