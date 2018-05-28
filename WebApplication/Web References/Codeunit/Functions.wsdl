@@ -146,7 +146,7 @@
           <element minOccurs="0" maxOccurs="unbounded" name="PostedReceiveLine" type="tns:PostedReceiveLine" />
           <element minOccurs="0" maxOccurs="unbounded" name="SalesCreditMemo" type="tns:SalesCreditMemo" />
           <element minOccurs="0" maxOccurs="unbounded" name="SalesCreditMemoLines" type="tns:SalesCreditMemoLines" />
-          <element minOccurs="1" maxOccurs="unbounded" name="TestAddress" type="tns:TestAddress" />
+          <element minOccurs="0" maxOccurs="unbounded" name="TestAddress" type="tns:TestAddress" />
         </sequence>
       </complexType>
       <element name="SearchResults" type="tns:SearchResults" />

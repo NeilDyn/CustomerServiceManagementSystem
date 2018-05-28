@@ -9,26 +9,26 @@
 <body>
     <form id="frmMainForm" runat="server">
         <div>
-            <asp:Label ID="lblEnterSearchNo" runat="server" Text="Enter Search No."></asp:Label>
+            <span aria-multiselectable="False"><asp:Label ID="lblEnterSearchNo" runat="server" Text="Enter Search No."></asp:Label></span>
             <asp:TextBox ID="txtSearchNo" runat="server" style="margin-left: 16px" Width="140px" ForeColor="Black" Height="16px"></asp:TextBox>
             <asp:Button ID="btnSearch" runat="server" Text="Search" style="margin-left: 10px" Width="120px" OnClick="Button1_Click" />
         </div>
 
         <br />
         <div>
-            <asp:Label ID="lblOrderDate" runat="server" Text="Order Date:" />
+            <span><asp:Label ID="lblOrderDate" runat="server" Text="Order Date:" /></span>
             <asp:TextBox ID="txtOrderDate" runat="server" style="margin-left: 92px" Width="200px" Enabled="False" />
-            <asp:Label ID="lblShipToName" runat="server" style="margin-left: 16px" Text="Ship-to Name:" />
+            <span><asp:Label ID="lblShipToName" runat="server" style="margin-left: 16px" Text="Ship-to Name:" /></span>
             <asp:TextBox ID="txtShipToName" runat="server" style="margin-left: 28px" Width="200px" Enabled="False" />
             <br />
-            <asp:Label ID="lblSellToCustomerNo" runat="server" Text="Sell-to Customer No:" />
+            <span><asp:Label ID="lblSellToCustomerNo" runat="server" Text="Sell-to Customer No:" /></span>
             <asp:TextBox ID="txtSellToCustomerNo" runat="server" style="margin-left: 34px" Width="200px" Enabled="False" />
-            <asp:Label ID="lblCustomerAddress" runat="server" style="margin-left: 16px" Text="Ship-to Address:" />
+            <span><asp:Label ID="lblCustomerAddress" runat="server" style="margin-left: 16px" Text="Ship-to Address:" /></span>
             <asp:TextBox ID="txtShipToAddress" runat="server" style="margin-left: 16px" Width="200px" Enabled="False" />
             <br />
-            <asp:Label ID="lblSellToCustomerNo0" runat="server" Text="Sell-to Customer Name:" />
+            <span><asp:Label ID="lblSellToCustomerNo0" runat="server" Text="Sell-to Customer Name:" /></span>
             <asp:TextBox ID="txtSellToCustomerName" runat="server" style="margin-left: 16px" Width="200px" Enabled="False" />
-            <asp:Label ID="lblCustomerAddress0" runat="server" style="margin-left: 16px" Text="Ship-to City:" />
+            <span><asp:Label ID="lblCustomerAddress0" runat="server" style="margin-left: 16px" Text="Ship-to City:" /></span>
             <asp:TextBox ID="txtShipToCity" runat="server" style="margin-left: 43px" Width="200px" Enabled="False" />
         </div>
 

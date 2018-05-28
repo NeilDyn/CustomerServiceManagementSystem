@@ -38,14 +38,25 @@ namespace WebApplication
                 try
                 {
                     searchResults = new SearchResults();
-                    searchResults = webService.FindOrder(searchValue);
-                    channel = searchResults.TestAddress[0].Channel;
+                    searchResults = webService.FindOrder(searchValue);             
 
                     if (searchResults == null)
                     {
                         ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "XML port returned null value" + "');", true);
 
                         searchResults = new SearchResults();
+                    }
+                    else
+                    {
+                        channel = searchResults.TestAddress[0].Channel;
+
+                        string[] split = channel[0].Split(';');
+                        txtSellToCustomerNo.Text = split[0];
+                        txtSellToCustomerName.Text = split[1];
+                        txtOrderDate.Text = split[2];
+                        txtShipToName.Text = split[3];
+                        txtShipToAddress.Text = split[4];
+                        txtShipToCity.Text = split[5];
                     }
                 }
                 catch (Exception ex)
@@ -58,17 +69,7 @@ namespace WebApplication
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "No records found." + "');", true);
                 searchResults = new SearchResults();
             }
-
-            
-
-            string[] split = channel[0].Split(';');
-            txtSellToCustomerNo.Text = split[0];
-            txtSellToCustomerName.Text = split[1];
-            txtOrderDate.Text = split[2];
-            txtShipToName.Text = split[3];
-            txtShipToAddress.Text = split[4];
-            txtShipToCity.Text = split[5];
-            
+         
             gdvSalesOrder.DataSource = searchResults.SalesHeader;
             gdvSalesLine.DataSource = searchResults.SalesLine;
             gdvShipmentHeader.DataSource = searchResults.SalesShipmentHeader;
