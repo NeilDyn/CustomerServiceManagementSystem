@@ -364,12 +364,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="Web References\Codeunit\WebServiceController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\WebService\" />
-    <Folder Include="Web References\Codeunit\App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

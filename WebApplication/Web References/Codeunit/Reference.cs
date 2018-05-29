@@ -23,7 +23,7 @@ namespace WebApplication.Codeunit {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="Functions_Binding", Namespace="urn:microsoft-dynamics-schemas/codeunit/Functions")]
@@ -127,7 +127,7 @@ namespace WebApplication.Codeunit {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -162,7 +162,9 @@ namespace WebApplication.Codeunit {
         
         private SalesCreditMemoLines[] salesCreditMemoLinesField;
         
-        private TestAddress[] testAddressField;
+        private SOImportBuffer[] sOImportBufferField;
+        
+        private Warranty[] warrantyField;
         
         private string[] textField;
         
@@ -321,13 +323,24 @@ namespace WebApplication.Codeunit {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("TestAddress")]
-        public TestAddress[] TestAddress {
+        [System.Xml.Serialization.XmlElementAttribute("SOImportBuffer")]
+        public SOImportBuffer[] SOImportBuffer {
             get {
-                return this.testAddressField;
+                return this.sOImportBufferField;
             }
             set {
-                this.testAddressField = value;
+                this.sOImportBufferField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Warranty")]
+        public Warranty[] Warranty {
+            get {
+                return this.warrantyField;
+            }
+            set {
+                this.warrantyField = value;
             }
         }
         
@@ -344,7 +357,7 @@ namespace WebApplication.Codeunit {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -358,6 +371,22 @@ namespace WebApplication.Codeunit {
         private string extDocNoField;
         
         private string docDateField;
+        
+        private string shipToNameField;
+        
+        private string shipToAddressField;
+        
+        private string shipToAddress2Field;
+        
+        private string shipToContactField;
+        
+        private string shipToCityField;
+        
+        private string shipToZipField;
+        
+        private string shipToStateField;
+        
+        private string shipToCountryField;
         
         /// <remarks/>
         public string DocType {
@@ -398,28 +427,134 @@ namespace WebApplication.Codeunit {
                 this.docDateField = value;
             }
         }
+        
+        /// <remarks/>
+        public string ShipToName {
+            get {
+                return this.shipToNameField;
+            }
+            set {
+                this.shipToNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress {
+            get {
+                return this.shipToAddressField;
+            }
+            set {
+                this.shipToAddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress2 {
+            get {
+                return this.shipToAddress2Field;
+            }
+            set {
+                this.shipToAddress2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToContact {
+            get {
+                return this.shipToContactField;
+            }
+            set {
+                this.shipToContactField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCity {
+            get {
+                return this.shipToCityField;
+            }
+            set {
+                this.shipToCityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToZip {
+            get {
+                return this.shipToZipField;
+            }
+            set {
+                this.shipToZipField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToState {
+            get {
+                return this.shipToStateField;
+            }
+            set {
+                this.shipToStateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCountry {
+            get {
+                return this.shipToCountryField;
+            }
+            set {
+                this.shipToCountryField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
-    public partial class TestAddress {
+    public partial class Warranty {
         
-        private string[] channelField;
+        private string[] statusField;
+        
+        private string[] policyField;
+        
+        private string[] daysRemainingField;
         
         private string[] textField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("Channel")]
-        public string[] Channel {
+        [System.Xml.Serialization.XmlElementAttribute("Status")]
+        public string[] Status {
             get {
-                return this.channelField;
+                return this.statusField;
             }
             set {
-                this.channelField = value;
+                this.statusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Policy")]
+        public string[] Policy {
+            get {
+                return this.policyField;
+            }
+            set {
+                this.policyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("DaysRemaining")]
+        public string[] DaysRemaining {
+            get {
+                return this.daysRemainingField;
+            }
+            set {
+                this.daysRemainingField = value;
             }
         }
         
@@ -436,7 +571,184 @@ namespace WebApplication.Codeunit {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="<urn:microsoft-dynamics-nav/xmlports/searchresults>")]
+    public partial class SOImportBuffer {
+        
+        private string externalDocumentNoField;
+        
+        private string orderStatusField;
+        
+        private string orderDateField;
+        
+        private string salesOrderNoField;
+        
+        private string channelNameField;
+        
+        private string customerNoField;
+        
+        private string shipToNameField;
+        
+        private string shipToAddressField;
+        
+        private string shipToAddress2Field;
+        
+        private string shipToContactField;
+        
+        private string shipToCityField;
+        
+        private string shipToZipField;
+        
+        private string shipToStateField;
+        
+        private string shipToCountryField;
+        
+        /// <remarks/>
+        public string ExternalDocumentNo {
+            get {
+                return this.externalDocumentNoField;
+            }
+            set {
+                this.externalDocumentNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string OrderStatus {
+            get {
+                return this.orderStatusField;
+            }
+            set {
+                this.orderStatusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string OrderDate {
+            get {
+                return this.orderDateField;
+            }
+            set {
+                this.orderDateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SalesOrderNo {
+            get {
+                return this.salesOrderNoField;
+            }
+            set {
+                this.salesOrderNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ChannelName {
+            get {
+                return this.channelNameField;
+            }
+            set {
+                this.channelNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CustomerNo {
+            get {
+                return this.customerNoField;
+            }
+            set {
+                this.customerNoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToName {
+            get {
+                return this.shipToNameField;
+            }
+            set {
+                this.shipToNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress {
+            get {
+                return this.shipToAddressField;
+            }
+            set {
+                this.shipToAddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress2 {
+            get {
+                return this.shipToAddress2Field;
+            }
+            set {
+                this.shipToAddress2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToContact {
+            get {
+                return this.shipToContactField;
+            }
+            set {
+                this.shipToContactField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCity {
+            get {
+                return this.shipToCityField;
+            }
+            set {
+                this.shipToCityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToZip {
+            get {
+                return this.shipToZipField;
+            }
+            set {
+                this.shipToZipField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToState {
+            get {
+                return this.shipToStateField;
+            }
+            set {
+                this.shipToStateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCountry {
+            get {
+                return this.shipToCountryField;
+            }
+            set {
+                this.shipToCountryField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -505,7 +817,7 @@ namespace WebApplication.Codeunit {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -517,6 +829,22 @@ namespace WebApplication.Codeunit {
         private string extDocNoField;
         
         private string postingDateField;
+        
+        private string shipToNameField;
+        
+        private string shipToAddressField;
+        
+        private string shipToAddress2Field;
+        
+        private string shipToContactField;
+        
+        private string shipToCityField;
+        
+        private string shipToZipField;
+        
+        private string shipToStateField;
+        
+        private string shipToCountryField;
         
         /// <remarks/>
         public string No {
@@ -547,10 +875,90 @@ namespace WebApplication.Codeunit {
                 this.postingDateField = value;
             }
         }
+        
+        /// <remarks/>
+        public string ShipToName {
+            get {
+                return this.shipToNameField;
+            }
+            set {
+                this.shipToNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress {
+            get {
+                return this.shipToAddressField;
+            }
+            set {
+                this.shipToAddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress2 {
+            get {
+                return this.shipToAddress2Field;
+            }
+            set {
+                this.shipToAddress2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToContact {
+            get {
+                return this.shipToContactField;
+            }
+            set {
+                this.shipToContactField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCity {
+            get {
+                return this.shipToCityField;
+            }
+            set {
+                this.shipToCityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToZip {
+            get {
+                return this.shipToZipField;
+            }
+            set {
+                this.shipToZipField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToState {
+            get {
+                return this.shipToStateField;
+            }
+            set {
+                this.shipToStateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCountry {
+            get {
+                return this.shipToCountryField;
+            }
+            set {
+                this.shipToCountryField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -619,7 +1027,7 @@ namespace WebApplication.Codeunit {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -641,6 +1049,22 @@ namespace WebApplication.Codeunit {
         private string postedSourceIDField;
         
         private string sourceIDField;
+        
+        private string shipFromNameField;
+        
+        private string shipFromAddressField;
+        
+        private string shipFromAddress2Field;
+        
+        private string shipFromContactField;
+        
+        private string shipFromCityField;
+        
+        private string shipFromZipField;
+        
+        private string shipFromStateField;
+        
+        private string shipFromCountryField;
         
         /// <remarks/>
         public string No {
@@ -721,10 +1145,90 @@ namespace WebApplication.Codeunit {
                 this.sourceIDField = value;
             }
         }
+        
+        /// <remarks/>
+        public string ShipFromName {
+            get {
+                return this.shipFromNameField;
+            }
+            set {
+                this.shipFromNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipFromAddress {
+            get {
+                return this.shipFromAddressField;
+            }
+            set {
+                this.shipFromAddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipFromAddress2 {
+            get {
+                return this.shipFromAddress2Field;
+            }
+            set {
+                this.shipFromAddress2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipFromContact {
+            get {
+                return this.shipFromContactField;
+            }
+            set {
+                this.shipFromContactField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipFromCity {
+            get {
+                return this.shipFromCityField;
+            }
+            set {
+                this.shipFromCityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipFromZip {
+            get {
+                return this.shipFromZipField;
+            }
+            set {
+                this.shipFromZipField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipFromState {
+            get {
+                return this.shipFromStateField;
+            }
+            set {
+                this.shipFromStateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipFromCountry {
+            get {
+                return this.shipFromCountryField;
+            }
+            set {
+                this.shipFromCountryField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -793,7 +1297,7 @@ namespace WebApplication.Codeunit {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -805,6 +1309,22 @@ namespace WebApplication.Codeunit {
         private string extDocNoField;
         
         private string receiveDateField;
+        
+        private string shipToNameField;
+        
+        private string shipToAddressField;
+        
+        private string shipToAddress2Field;
+        
+        private string shipToContactField;
+        
+        private string shipToCityField;
+        
+        private string shipToZipField;
+        
+        private string shipToStateField;
+        
+        private string shipToCountryField;
         
         /// <remarks/>
         public string No {
@@ -835,10 +1355,90 @@ namespace WebApplication.Codeunit {
                 this.receiveDateField = value;
             }
         }
+        
+        /// <remarks/>
+        public string ShipToName {
+            get {
+                return this.shipToNameField;
+            }
+            set {
+                this.shipToNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress {
+            get {
+                return this.shipToAddressField;
+            }
+            set {
+                this.shipToAddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress2 {
+            get {
+                return this.shipToAddress2Field;
+            }
+            set {
+                this.shipToAddress2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToContact {
+            get {
+                return this.shipToContactField;
+            }
+            set {
+                this.shipToContactField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCity {
+            get {
+                return this.shipToCityField;
+            }
+            set {
+                this.shipToCityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToZip {
+            get {
+                return this.shipToZipField;
+            }
+            set {
+                this.shipToZipField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToState {
+            get {
+                return this.shipToStateField;
+            }
+            set {
+                this.shipToStateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCountry {
+            get {
+                return this.shipToCountryField;
+            }
+            set {
+                this.shipToCountryField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -907,7 +1507,7 @@ namespace WebApplication.Codeunit {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -919,6 +1519,22 @@ namespace WebApplication.Codeunit {
         private string extDocNoField;
         
         private string postingDateField;
+        
+        private string shipToNameField;
+        
+        private string shipToAddressField;
+        
+        private string shipToAddress2Field;
+        
+        private string shipToContactField;
+        
+        private string shipToCityField;
+        
+        private string shipToZipField;
+        
+        private string shipToStateField;
+        
+        private string shipToCountryField;
         
         /// <remarks/>
         public string No {
@@ -949,10 +1565,90 @@ namespace WebApplication.Codeunit {
                 this.postingDateField = value;
             }
         }
+        
+        /// <remarks/>
+        public string ShipToName {
+            get {
+                return this.shipToNameField;
+            }
+            set {
+                this.shipToNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress {
+            get {
+                return this.shipToAddressField;
+            }
+            set {
+                this.shipToAddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress2 {
+            get {
+                return this.shipToAddress2Field;
+            }
+            set {
+                this.shipToAddress2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToContact {
+            get {
+                return this.shipToContactField;
+            }
+            set {
+                this.shipToContactField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCity {
+            get {
+                return this.shipToCityField;
+            }
+            set {
+                this.shipToCityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToZip {
+            get {
+                return this.shipToZipField;
+            }
+            set {
+                this.shipToZipField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToState {
+            get {
+                return this.shipToStateField;
+            }
+            set {
+                this.shipToStateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCountry {
+            get {
+                return this.shipToCountryField;
+            }
+            set {
+                this.shipToCountryField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1033,7 +1729,7 @@ namespace WebApplication.Codeunit {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1053,6 +1749,22 @@ namespace WebApplication.Codeunit {
         private string postedSourceIDField;
         
         private string sourceIDField;
+        
+        private string shipToNameField;
+        
+        private string shipToAddressField;
+        
+        private string shipToAddress2Field;
+        
+        private string shipToContactField;
+        
+        private string shipToCityField;
+        
+        private string shipToZipField;
+        
+        private string shipToStateField;
+        
+        private string shipToCountryField;
         
         /// <remarks/>
         public string PackNo {
@@ -1123,10 +1835,90 @@ namespace WebApplication.Codeunit {
                 this.sourceIDField = value;
             }
         }
+        
+        /// <remarks/>
+        public string ShipToName {
+            get {
+                return this.shipToNameField;
+            }
+            set {
+                this.shipToNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress {
+            get {
+                return this.shipToAddressField;
+            }
+            set {
+                this.shipToAddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress2 {
+            get {
+                return this.shipToAddress2Field;
+            }
+            set {
+                this.shipToAddress2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToContact {
+            get {
+                return this.shipToContactField;
+            }
+            set {
+                this.shipToContactField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCity {
+            get {
+                return this.shipToCityField;
+            }
+            set {
+                this.shipToCityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToZip {
+            get {
+                return this.shipToZipField;
+            }
+            set {
+                this.shipToZipField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToState {
+            get {
+                return this.shipToStateField;
+            }
+            set {
+                this.shipToStateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCountry {
+            get {
+                return this.shipToCountryField;
+            }
+            set {
+                this.shipToCountryField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1195,7 +1987,7 @@ namespace WebApplication.Codeunit {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1207,6 +1999,26 @@ namespace WebApplication.Codeunit {
         private string extDocNoField;
         
         private string shippingDateField;
+        
+        private string shipToNameField;
+        
+        private string shipToAddressField;
+        
+        private string shipToAddress2Field;
+        
+        private string shipToContactField;
+        
+        private string shipToCityField;
+        
+        private string shipToZipField;
+        
+        private string shipToStateField;
+        
+        private string shipToCountryField;
+        
+        private string shippingAgentCodeField;
+        
+        private string shippingAgentServiceField;
         
         /// <remarks/>
         public string No {
@@ -1237,10 +2049,110 @@ namespace WebApplication.Codeunit {
                 this.shippingDateField = value;
             }
         }
+        
+        /// <remarks/>
+        public string ShipToName {
+            get {
+                return this.shipToNameField;
+            }
+            set {
+                this.shipToNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress {
+            get {
+                return this.shipToAddressField;
+            }
+            set {
+                this.shipToAddressField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToAddress2 {
+            get {
+                return this.shipToAddress2Field;
+            }
+            set {
+                this.shipToAddress2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToContact {
+            get {
+                return this.shipToContactField;
+            }
+            set {
+                this.shipToContactField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCity {
+            get {
+                return this.shipToCityField;
+            }
+            set {
+                this.shipToCityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToZip {
+            get {
+                return this.shipToZipField;
+            }
+            set {
+                this.shipToZipField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToState {
+            get {
+                return this.shipToStateField;
+            }
+            set {
+                this.shipToStateField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShipToCountry {
+            get {
+                return this.shipToCountryField;
+            }
+            set {
+                this.shipToCountryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShippingAgentCode {
+            get {
+                return this.shippingAgentCodeField;
+            }
+            set {
+                this.shippingAgentCodeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ShippingAgentService {
+            get {
+                return this.shippingAgentServiceField;
+            }
+            set {
+                this.shippingAgentServiceField = value;
+            }
+        }
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2556.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1309,11 +2221,11 @@ namespace WebApplication.Codeunit {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     public delegate void SearchDetermineNoTypeCompletedEventHandler(object sender, SearchDetermineNoTypeCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.2556.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SearchDetermineNoTypeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {

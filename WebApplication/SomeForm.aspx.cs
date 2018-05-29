@@ -18,7 +18,8 @@ namespace WebApplication
             ShipmentHdr,
             ShipmentLine,
             Package,
-            PackageLine
+            PackageLine,
+            SOImportBuffer
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -82,6 +83,12 @@ namespace WebApplication
                         if (sr.PostedPackageLine != null)
                         {
                             gv.DataSource = sr.PostedPackageLine;
+                        }
+                        break;
+                    case ObjectList.SOImportBuffer:
+                        if (sr.SOImportBuffer != null)
+                        {
+                            gv.DataSource = sr.SOImportBuffer;
                         }
                         break;
                     default:
